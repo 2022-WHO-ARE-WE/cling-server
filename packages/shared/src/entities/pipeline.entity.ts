@@ -1,7 +1,6 @@
 import {
   Column,
   Entity,
-  JoinColumn,
   JoinTable,
   ManyToMany,
   ManyToOne,
@@ -52,20 +51,20 @@ export class PipelineEntity {
   deletedDate?: Date;
 
   @OneToMany(() => NodeEntity, (node) => node.pipeline)
-  @JoinColumn()
+  @JoinTable()
   nodes: NodeEntity[];
 
   @ManyToMany(
     () => TransparentCodeEntity,
     (transparentCode) => transparentCode.pipeline,
   )
-  @JoinColumn()
+  @JoinTable()
   transparentCodes: TransparentCodeEntity[];
 
   @ManyToOne(
     () => PipelineCategoryEntity,
     (pipelineCategory) => pipelineCategory.pipelines,
   )
-  @JoinColumn()
+  @JoinTable()
   pipelineCategory: PipelineCategoryEntity;
 }

@@ -3,7 +3,6 @@ import {
   CreateDateColumn,
   DeleteDateColumn,
   Entity,
-  JoinColumn,
   JoinTable,
   OneToMany,
   PrimaryGeneratedColumn,
@@ -44,6 +43,6 @@ export class BusinessCategoryEntity {
     () => BusinessSubCategoryEntity,
     (businessSubCategory) => businessSubCategory.businessCategory,
   )
-  @JoinColumn()
+  @JoinTable()
   businessSubCategories: BusinessSubCategoryEntity[];
 }

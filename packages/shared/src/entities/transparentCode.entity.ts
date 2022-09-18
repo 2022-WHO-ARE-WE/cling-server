@@ -3,7 +3,6 @@ import {
   CreateDateColumn,
   DeleteDateColumn,
   Entity,
-  JoinColumn,
   JoinTable,
   ManyToMany,
   ManyToOne,
@@ -44,10 +43,10 @@ export class TransparentCodeEntity {
   deletedDate?: Date;
 
   @ManyToOne(() => CompanyEntity, (company) => company.transparentCodes)
-  @JoinColumn()
+  @JoinTable()
   company: CompanyEntity;
 
   @ManyToMany(() => PipelineEntity, (pipeline) => pipeline.transparentCodes)
-  @JoinColumn()
+  @JoinTable()
   pipeline: PipelineEntity[];
 }

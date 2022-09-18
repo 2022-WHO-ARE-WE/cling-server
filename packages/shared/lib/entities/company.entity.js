@@ -62,12 +62,12 @@ __decorate([
 ], CompanyEntity.prototype, "deletedDate", void 0);
 __decorate([
     (0, OneToMany_1.OneToMany)(() => transparentCode_entity_1.TransparentCodeEntity, (transparentCode) => transparentCode.company),
-    (0, typeorm_1.JoinColumn)(),
+    (0, typeorm_1.JoinTable)(),
     __metadata("design:type", Array)
 ], CompanyEntity.prototype, "transparentCodes", void 0);
 __decorate([
     (0, OneToMany_1.OneToMany)(() => node_entity_1.NodeEntity, (node) => node.company),
-    (0, typeorm_1.JoinColumn)(),
+    (0, typeorm_1.JoinTable)(),
     __metadata("design:type", Array)
 ], CompanyEntity.prototype, "nodes", void 0);
 CompanyEntity = __decorate([

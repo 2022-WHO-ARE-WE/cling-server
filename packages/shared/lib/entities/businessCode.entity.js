@@ -41,16 +41,16 @@ __decorate([
 ], BusinessCodeEntity.prototype, "deletedDate", void 0);
 __decorate([
     (0, typeorm_1.OneToMany)(() => node_entity_1.NodeEntity, (node) => node.businessCode),
-    (0, typeorm_1.JoinColumn)(),
+    (0, typeorm_1.JoinTable)(),
     __metadata("design:type", Array)
 ], BusinessCodeEntity.prototype, "nodes", void 0);
 __decorate([
     (0, typeorm_1.ManyToOne)(() => businessDetailCategory_entity_1.BusinessDetailCategoryEntity, (businessDetailCategory) => businessDetailCategory.businessCodes),
-    (0, typeorm_1.JoinColumn)(),
+    (0, typeorm_1.JoinTable)(),
     __metadata("design:type", businessDetailCategory_entity_1.BusinessDetailCategoryEntity)
 ], BusinessCodeEntity.prototype, "businessDetailCategory", void 0);
 BusinessCodeEntity = __decorate([
-    (0, typeorm_1.Entity)('business_codes')
+    (0, typeorm_1.Entity)('business_codes', {})
 ], BusinessCodeEntity);
 exports.BusinessCodeEntity = BusinessCodeEntity;
 //# sourceMappingURL=businessCode.entity.js.map

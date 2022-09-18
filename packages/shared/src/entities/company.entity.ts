@@ -3,7 +3,6 @@ import {
   CreateDateColumn,
   DeleteDateColumn,
   Entity,
-  JoinColumn,
   JoinTable,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
@@ -70,10 +69,10 @@ export class CompanyEntity {
     () => TransparentCodeEntity,
     (transparentCode) => transparentCode.company,
   )
-  @JoinColumn()
+  @JoinTable()
   transparentCodes: TransparentCodeEntity[];
 
   @OneToMany(() => NodeEntity, (node) => node.company)
-  @JoinColumn()
+  @JoinTable()
   nodes: NodeEntity[];
 }

@@ -36,7 +36,7 @@ __decorate([
 ], PipelineCategoryEntity.prototype, "deletedDate", void 0);
 __decorate([
     (0, typeorm_1.OneToMany)(() => pipeline_entity_1.PipelineEntity, (pipeline) => pipeline.pipelineCategory),
-    (0, typeorm_1.JoinColumn)(),
+    (0, typeorm_1.JoinTable)(),
     __metadata("design:type", Array)
 ], PipelineCategoryEntity.prototype, "pipelines", void 0);
 PipelineCategoryEntity = __decorate([

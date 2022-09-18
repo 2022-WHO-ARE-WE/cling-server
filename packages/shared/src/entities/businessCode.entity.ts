@@ -3,7 +3,6 @@ import {
   CreateDateColumn,
   DeleteDateColumn,
   Entity,
-  JoinColumn,
   JoinTable,
   ManyToOne,
   OneToMany,
@@ -27,7 +26,7 @@ CREATE TABLE business_codes (
 );
 */
 
-@Entity('business_codes')
+@Entity('business_codes', {})
 export class BusinessCodeEntity {
   @PrimaryGeneratedColumn('uuid')
   id: string;
@@ -48,13 +47,13 @@ export class BusinessCodeEntity {
   deletedDate: Date;
 
   @OneToMany(() => NodeEntity, (node) => node.businessCode)
-  @JoinColumn()
+  @JoinTable()
   nodes: NodeEntity[];
 
   @ManyToOne(
     () => BusinessDetailCategoryEntity,
     (businessDetailCategory) => businessDetailCategory.businessCodes,
   )
-  @JoinColumn()
+  @JoinTable()
   businessDetailCategory: BusinessDetailCategoryEntity;
 }

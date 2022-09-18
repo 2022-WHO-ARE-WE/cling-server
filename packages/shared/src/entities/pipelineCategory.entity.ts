@@ -3,7 +3,6 @@ import {
   CreateDateColumn,
   DeleteDateColumn,
   Entity,
-  JoinColumn,
   JoinTable,
   OneToMany,
   PrimaryGeneratedColumn,
@@ -41,6 +40,6 @@ export class PipelineCategoryEntity {
   deletedDate?: Date;
 
   @OneToMany(() => PipelineEntity, (pipeline) => pipeline.pipelineCategory)
-  @JoinColumn()
+  @JoinTable()
   pipelines: PipelineEntity[];
 }

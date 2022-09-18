@@ -37,12 +37,12 @@ __decorate([
 ], BusinessSubCategoryEntity.prototype, "deletedDate", void 0);
 __decorate([
     (0, typeorm_1.OneToMany)(() => businessDetailCategory_entity_1.BusinessDetailCategoryEntity, (businessDetailCategory) => businessDetailCategory.businessSubCategory),
-    (0, typeorm_1.JoinColumn)(),
+    (0, typeorm_1.JoinTable)(),
     __metadata("design:type", Array)
 ], BusinessSubCategoryEntity.prototype, "businessDetailCategories", void 0);
 __decorate([
     (0, typeorm_1.ManyToOne)(() => businessCategory_entity_1.BusinessCategoryEntity, (businessCategory) => businessCategory.businessSubCategories),
-    (0, typeorm_1.JoinColumn)(),
+    (0, typeorm_1.JoinTable)(),
     __metadata("design:type", businessCategory_entity_1.BusinessCategoryEntity)
 ], BusinessSubCategoryEntity.prototype, "businessCategory", void 0);
 BusinessSubCategoryEntity = __decorate([

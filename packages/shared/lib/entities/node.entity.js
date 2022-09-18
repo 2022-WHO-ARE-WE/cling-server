@@ -46,22 +46,23 @@ __decorate([
     __metadata("design:type", Date)
 ], NodeEntity.prototype, "deletedDate", void 0);
 __decorate([
-    (0, typeorm_1.ManyToOne)(() => businessCode_entity_1.BusinessCodeEntity),
+    (0, typeorm_1.ManyToOne)(() => businessCode_entity_1.BusinessCodeEntity, (businessCode) => businessCode.nodes),
+    (0, typeorm_1.JoinTable)(),
     __metadata("design:type", businessCode_entity_1.BusinessCodeEntity)
 ], NodeEntity.prototype, "businessCode", void 0);
 __decorate([
     (0, typeorm_1.ManyToOne)(() => pipeline_entity_1.PipelineEntity, (pipeline) => pipeline.nodes),
-    (0, typeorm_1.JoinColumn)(),
+    (0, typeorm_1.JoinTable)(),
     __metadata("design:type", pipeline_entity_1.PipelineEntity)
 ], NodeEntity.prototype, "pipeline", void 0);
 __decorate([
     (0, typeorm_1.ManyToOne)(() => company_entity_1.CompanyEntity, (company) => company.nodes),
-    (0, typeorm_1.JoinColumn)(),
+    (0, typeorm_1.JoinTable)(),
     __metadata("design:type", company_entity_1.CompanyEntity)
 ], NodeEntity.prototype, "company", void 0);
 __decorate([
     (0, typeorm_1.OneToMany)(() => invitation_entity_1.InvitationEntity, (invitation) => invitation.node),
-    (0, typeorm_1.JoinColumn)(),
+    (0, typeorm_1.JoinTable)(),
     __metadata("design:type", Array)
 ], NodeEntity.prototype, "invitations", void 0);
 NodeEntity = __decorate([

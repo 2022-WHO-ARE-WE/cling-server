@@ -3,7 +3,6 @@ import {
   CreateDateColumn,
   DeleteDateColumn,
   Entity,
-  JoinColumn,
   JoinTable,
   ManyToOne,
   OneToMany,
@@ -47,13 +46,13 @@ export class BusinessDetailCategoryEntity {
     () => BusinessCodeEntity,
     (businessCode) => businessCode.businessDetailCategory,
   )
-  @JoinColumn()
+  @JoinTable()
   businessCodes: BusinessCodeEntity[];
 
   @ManyToOne(
     () => BusinessSubCategoryEntity,
     (businessSubCategory) => businessSubCategory.businessDetailCategories,
   )
-  @JoinColumn()
+  @JoinTable()
   businessSubCategory: BusinessSubCategoryEntity;
 }

@@ -3,7 +3,6 @@ import {
   CreateDateColumn,
   DeleteDateColumn,
   Entity,
-  JoinColumn,
   JoinTable,
   ManyToOne,
   PrimaryGeneratedColumn,
@@ -45,6 +44,6 @@ export class InvitationEntity {
   deletedDate: Date;
 
   @ManyToOne(() => NodeEntity, (node) => node.invitations)
-  @JoinColumn()
+  @JoinTable()
   node: NodeEntity;
 }

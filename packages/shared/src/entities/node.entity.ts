@@ -3,7 +3,6 @@ import {
   CreateDateColumn,
   DeleteDateColumn,
   Entity,
-  JoinColumn,
   JoinTable,
   ManyToOne,
   OneToMany,
@@ -55,18 +54,19 @@ export class NodeEntity {
   @DeleteDateColumn()
   deletedDate?: Date;
 
-  @ManyToOne(() => BusinessCodeEntity)
+  @ManyToOne(() => BusinessCodeEntity, (businessCode) => businessCode.nodes)
+  @JoinTable()
   businessCode: BusinessCodeEntity;
 
   @ManyToOne(() => PipelineEntity, (pipeline) => pipeline.nodes)
-  @JoinColumn()
+  @JoinTable()
   pipeline: PipelineEntity;
 
   @ManyToOne(() => CompanyEntity, (company) => company.nodes)
-  @JoinColumn()
+  @JoinTable()
   company: CompanyEntity;
 
   @OneToMany(() => InvitationEntity, (invitation) => invitation.node)
-  @JoinColumn()
+  @JoinTable()
   invitations: InvitationEntity[];
 }

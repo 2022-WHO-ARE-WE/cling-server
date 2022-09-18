@@ -36,7 +36,7 @@ __decorate([
 ], BusinessCategoryEntity.prototype, "deletedDate", void 0);
 __decorate([
     (0, typeorm_1.OneToMany)(() => businessSubCategory_entity_1.BusinessSubCategoryEntity, (businessSubCategory) => businessSubCategory.businessCategory),
-    (0, typeorm_1.JoinColumn)(),
+    (0, typeorm_1.JoinTable)(),
     __metadata("design:type", Array)
 ], BusinessCategoryEntity.prototype, "businessSubCategories", void 0);
 BusinessCategoryEntity = __decorate([

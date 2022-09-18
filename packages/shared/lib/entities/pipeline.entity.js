@@ -46,17 +46,17 @@ __decorate([
 ], PipelineEntity.prototype, "deletedDate", void 0);
 __decorate([
     (0, typeorm_1.OneToMany)(() => node_entity_1.NodeEntity, (node) => node.pipeline),
-    (0, typeorm_1.JoinColumn)(),
+    (0, typeorm_1.JoinTable)(),
     __metadata("design:type", Array)
 ], PipelineEntity.prototype, "nodes", void 0);
 __decorate([
     (0, typeorm_1.ManyToMany)(() => transparentCode_entity_1.TransparentCodeEntity, (transparentCode) => transparentCode.pipeline),
-    (0, typeorm_1.JoinColumn)(),
+    (0, typeorm_1.JoinTable)(),
     __metadata("design:type", Array)
 ], PipelineEntity.prototype, "transparentCodes", void 0);
 __decorate([
     (0, typeorm_1.ManyToOne)(() => pipelineCategory_entity_1.PipelineCategoryEntity, (pipelineCategory) => pipelineCategory.pipelines),
-    (0, typeorm_1.JoinColumn)(),
+    (0, typeorm_1.JoinTable)(),
     __metadata("design:type", pipelineCategory_entity_1.PipelineCategoryEntity)
 ], PipelineEntity.prototype, "pipelineCategory", void 0);
 PipelineEntity = __decorate([

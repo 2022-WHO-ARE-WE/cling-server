@@ -40,7 +40,7 @@ __decorate([
 ], InvitationEntity.prototype, "deletedDate", void 0);
 __decorate([
     (0, typeorm_1.ManyToOne)(() => node_entity_1.NodeEntity, (node) => node.invitations),
-    (0, typeorm_1.JoinColumn)(),
+    (0, typeorm_1.JoinTable)(),
     __metadata("design:type", node_entity_1.NodeEntity)
 ], InvitationEntity.prototype, "node", void 0);
 InvitationEntity = __decorate([
